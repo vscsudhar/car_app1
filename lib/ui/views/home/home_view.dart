@@ -3,7 +3,6 @@ import 'package:stacked/stacked.dart';
 import '../../common/shared/styles.dart';
 import '../../common/widgets/background.dart';
 import '../../common/widgets/text_field2.dart';
-import '../register/register_view.dart';
 import 'home_viewmodel.dart';
 
 class HomeView extends StackedView<HomeViewModel> {
@@ -19,10 +18,6 @@ class HomeView extends StackedView<HomeViewModel> {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          // Container(
-          //     decoration: const BoxDecoration(
-          //   image: DecorationImage(image: AssetImage("assets/icons/back.png"), fit: BoxFit.cover),
-          // )),
           const BackGround(),
           SingleChildScrollView(
             child: Center(

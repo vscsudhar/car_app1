@@ -29,11 +29,11 @@ class AllocatedView extends StackedView<AllocatedViewModel> {
               flexibleSpace: buildAppBarBackground(),
               centerTitle: true,
               bottom: TabBar(
-                indicatorColor: Colors.black87,
+                indicatorColor: Colors.amberAccent,
                 indicatorWeight: 4,
                 labelStyle: fontFamilyMedium.appwhite.size16,
-                labelColor: Colors.black,
-                unselectedLabelColor: Colors.white54,
+                labelColor: Colors.amberAccent,
+                unselectedLabelColor: Colors.white,
                 
                 tabs: const [
                   Tab(text: "Pending"),

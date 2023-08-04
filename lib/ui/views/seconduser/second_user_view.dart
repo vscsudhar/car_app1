@@ -5,7 +5,6 @@ import 'package:stacked/stacked.dart';
 import '../allocated_view/allocated_view_view.dart';
 import 'second_user_viewmodel.dart';
 
-
 class SecondUserView extends StackedView<SecondUserViewModel> {
   const SecondUserView({Key? key}) : super(key: key);
 
@@ -27,12 +26,12 @@ class SecondUserView extends StackedView<SecondUserViewModel> {
                   child: Image.asset(
                     back1,
                     fit: BoxFit.fill,
-                  ), 
+                  ),
                 ),
                 Center(
                   child: Text(
                     'View',
-                    style: fontFamilyBold.size32.appwhite, 
+                    style: fontFamilyBold.size32.appwhite,
                   ),
                 ),
               ],
@@ -49,7 +48,7 @@ class SecondUserView extends StackedView<SecondUserViewModel> {
                     children: [
                       Expanded(
                           child: InkWell(
-                        onTap: ()=> viewModel.goToAllocatedView(),
+                        onTap: () => viewModel.goToAllocatedView(),
                         child: Container(
                           height: 100,
                           decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
@@ -64,7 +63,7 @@ class SecondUserView extends StackedView<SecondUserViewModel> {
                               Center(
                                 child: Text(
                                   'Allocated',
-                                  style: fontFamilyMedium.size18.appwhite, 
+                                  style: fontFamilyMedium.size18.appwhite,
                                 ),
                               ),
                             ],
@@ -101,6 +100,126 @@ class SecondUserView extends StackedView<SecondUserViewModel> {
                     ],
                   ),
                 ),
+                Padding(
+                  padding: topPadding20,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                          child: InkWell(
+                        onTap: () {},
+                        child: Container(
+                          height: 100,
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                          child: Stack(
+                            children: [
+                              Positioned.fill(
+                                child: Image.asset(
+                                  back1,
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                              Center(
+                                child: Text(
+                                  'Driver Daily Report',
+                                  style: fontFamilyMedium.size18.appwhite,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )),
+                      horizontalSpacing20,
+                      Expanded(
+                          child: InkWell(
+                        onTap: () {},
+                        child: Container(
+                          height: 100,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Stack(
+                            children: [
+                              Positioned.fill(
+                                child: Image.asset(
+                                  back2,
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                              Center(
+                                child: Text(
+                                  'Driver Monthly Report',
+                                  textAlign: TextAlign.center,
+                                  style: fontFamilyMedium.size18.appwhite,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: topPadding20,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                          child: InkWell(
+                        onTap: (){},
+                        child: Container(
+                          height: 100,
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                          child: Stack(
+                            children: [
+                              Positioned.fill(
+                                child: Image.asset(
+                                  back1,
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                              Center(
+                                child: Text(
+                                  'On Duty Driver',
+                                  style: fontFamilyMedium.size18.appwhite, 
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )),
+                      horizontalSpacing20,
+                      Expanded(
+                          child: InkWell(
+                        onTap: () {},
+                        child: Container(
+                          height: 100,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Stack(
+                            children: [
+                              Positioned.fill(
+                                child: Image.asset(
+                                  back2,
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                              Center(
+                                child: Text(
+                                  'Available Driver',
+                                  style: fontFamilyMedium.size18.appwhite,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )),
+                    ],
+                  ),
+                ),
+                
               ],
             ),
           )
