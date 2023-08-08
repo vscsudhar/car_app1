@@ -80,7 +80,12 @@ class DeliveryVehicleDetailsView extends StackedView<DeliveryVehicleDetailsViewM
                   ),
                   verticalSpacing10,
                   TextField2(
-                    hintText: 'Address & Location',
+                    hintText: 'Area & Location',
+                    hintStyle: fontFamilyRegular.black45,
+                  ),
+                  verticalSpacing10,
+                  TextField2(
+                    hintText: 'Street',
                     hintStyle: fontFamilyRegular.black45,
                   ),
                   verticalSpacing10,
@@ -90,21 +95,8 @@ class DeliveryVehicleDetailsView extends StackedView<DeliveryVehicleDetailsViewM
                   ),
                   verticalSpacing10,
                   TextField2(
-                    hintText: 'State Name',
+                    hintText: 'Pincode',
                     hintStyle: fontFamilyRegular.black45,
-                    readOnly: true,
-                    onTap: () {
-                      viewModel.stateview();
-                    },
-                  ),
-                  verticalSpacing10,
-                  TextField2(
-                    hintText: 'City Name',
-                    hintStyle: fontFamilyRegular.black45,
-                    readOnly: true,
-                    onTap: () {
-                      viewModel.cityview();
-                    },
                   ),
                   verticalSpacing20,
                   Row(
@@ -115,7 +107,7 @@ class DeliveryVehicleDetailsView extends StackedView<DeliveryVehicleDetailsViewM
                         child: Stack(
                           children: [
                             Padding(
-                              padding: leftPadding10,
+                              padding: leftPadding20,
                               child: Image.asset(backbutton, height: 140),
                             ),
                             Padding(
@@ -125,10 +117,14 @@ class DeliveryVehicleDetailsView extends StackedView<DeliveryVehicleDetailsViewM
                                   borderRadius: BorderRadius.circular(8),
                                   gradient: const LinearGradient(
                                     end: Alignment.center,
-                                    colors: [Colors.amberAccent, Colors.transparent],
+                                    colors: [
+                                      Colors.amberAccent,
+                                      Colors.transparent
+                                    ],
                                   ),
                                 ),
-                                child: Text('Submit', style: fontFamilyBold.size30.black),
+                                child: Text('Submit',
+                                    style: fontFamilyBold.size30.black),
                               ),
                             ),
                           ],

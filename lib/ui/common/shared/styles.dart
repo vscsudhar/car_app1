@@ -9,6 +9,10 @@ const backbutton = 'assets/icons/button.png';
 //colors
 const appcolor2699FB = Color(0xFF2699FB);
 const appwhite1 = Color.fromARGB(255, 255, 255, 255);
+const appViking = Color(0xFF41bfd0);
+const appBrinkPink = Color(0xFFFF668E);
+const appChambray = Color(0xFF565F73);
+
 // const appcolor2699FB = Colors.red;
 
 //spacer
@@ -39,6 +43,7 @@ const defaultPadding8 = EdgeInsets.all(8);
 const topPadding40 = EdgeInsets.only(top: 40);
 const topPadding30 = EdgeInsets.only(top: 30);
 const topPadding20 = EdgeInsets.only(top: 20);
+const topPadding12 = EdgeInsets.only(top: 12);
 const topPadding10 = EdgeInsets.only(top: 10);
 const topPadding8 = EdgeInsets.only(top: 8);
 const topPadding4 = EdgeInsets.only(top: 4);
@@ -93,6 +98,5 @@ extension TextStyleHelpers on TextStyle {
   TextStyle get red => copyWith(color: Colors.red);
   TextStyle get black => copyWith(color: Colors.black);
   TextStyle get black45 => copyWith(color: Colors.black45);
-  TextStyle get ceon =>
-      copyWith(color: const Color.fromARGB(255, 18, 136, 126));
+  TextStyle get ceon => copyWith(color: const Color.fromARGB(255, 18, 136, 126));
 }

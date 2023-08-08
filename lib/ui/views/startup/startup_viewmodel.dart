@@ -5,7 +5,7 @@ import 'package:stacked_services/stacked_services.dart';
 
 import '../../../core/mixin.dart';
 
-class StartupViewModel extends BaseViewModel with NavigationMixin{
+class StartupViewModel extends BaseViewModel with NavigationMixin {
   final _navigationService = locator<NavigationService>();
 
   // Place anything here that needs to happen before we get into the application

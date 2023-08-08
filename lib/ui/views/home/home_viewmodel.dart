@@ -7,7 +7,7 @@ import '../../../app/app.locator.dart';
 import '../../../core/mixin.dart';
 import '../../common/app_strings.dart';
 
-class HomeViewModel extends BaseViewModel with NavigationMixin{
+class HomeViewModel extends BaseViewModel with NavigationMixin {
   final _dialogService = locator<DialogService>();
   final _bottomSheetService = locator<BottomSheetService>();
 

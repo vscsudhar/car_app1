@@ -5,7 +5,7 @@ import '../../../app/app.bottomsheets.dart';
 import '../../../app/app.locator.dart';
 import '../../../core/mixin.dart';
 
-class EnterVehicleDetailsViewModel extends BaseViewModel with NavigationMixin{
+class EnterVehicleDetailsViewModel extends BaseViewModel with NavigationMixin {
   EnterVehicleDetailsViewModel();
 
   final _bottomSheetService = locator<BottomSheetService>();

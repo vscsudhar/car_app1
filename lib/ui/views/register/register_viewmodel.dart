@@ -5,7 +5,7 @@ import '../../../app/app.bottomsheets.dart';
 import '../../../app/app.locator.dart';
 import '../../../core/mixin.dart';
 
-class RegisterViewModel extends BaseViewModel with NavigationMixin{
+class RegisterViewModel extends BaseViewModel with NavigationMixin {
   RegisterViewModel();
 
   final _bottomSheetService = locator<BottomSheetService>();

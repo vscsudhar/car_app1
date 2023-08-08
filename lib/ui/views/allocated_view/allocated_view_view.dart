@@ -22,19 +22,26 @@ class AllocatedView extends StackedView<AllocatedViewModel> {
       child: Scaffold(
           backgroundColor: appwhite1,
           appBar: AppBar(
+            backgroundColor: appwhite1,
+            elevation: 0,
               title: Text(
                 'Allocation',
-                style: fontFamilyMedium.appwhite.size26,
+                style: fontFamilyMedium.appwhite.size30,
               ),
               flexibleSpace: buildAppBarBackground(),
               centerTitle: true,
               bottom: TabBar(
+                padding: defaultPadding8,
                 indicatorColor: Colors.amberAccent,
                 indicatorWeight: 4,
-                labelStyle: fontFamilyMedium.appwhite.size16,
-                labelColor: Colors.amberAccent,
+                labelStyle: fontFamilyBold.appwhite.size16,
+                labelColor: Colors.black,
                 unselectedLabelColor: Colors.white,
-                
+                indicator: BoxDecoration(
+                  border: Border.all(color: Colors.amber),
+                  borderRadius: BorderRadius.circular(10),
+                  color: appwhite1,
+                ),
                 tabs: const [
                   Tab(text: "Pending"),
                   Tab(text: "Inprogress"),

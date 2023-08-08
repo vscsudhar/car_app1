@@ -5,7 +5,8 @@ import '../../common/shared/styles.dart';
 import '../../common/widgets/text_field2.dart';
 import 'enter_vehicle_details_viewmodel.dart';
 
-class EnterVehicleDetailsView extends StackedView<EnterVehicleDetailsViewModel> {
+class EnterVehicleDetailsView
+    extends StackedView<EnterVehicleDetailsViewModel> {
   const EnterVehicleDetailsView({Key? key}) : super(key: key);
 
   @override
@@ -32,7 +33,8 @@ class EnterVehicleDetailsView extends StackedView<EnterVehicleDetailsViewModel> 
                 Center(
                   child: Text(
                     'Vehicle Input Details',
-                    style: fontFamilyBold.size32.appwhite, // Adjust text color as needed
+                    style: fontFamilyBold
+                        .size32.appwhite, // Adjust text color as needed
                   ),
                 ),
               ],
@@ -68,7 +70,12 @@ class EnterVehicleDetailsView extends StackedView<EnterVehicleDetailsViewModel> 
                   ),
                   verticalSpacing10,
                   TextField2(
-                    hintText: 'Address & Location',
+                    hintText: 'Area & Location',
+                    hintStyle: fontFamilyRegular.black45,
+                  ),
+                  verticalSpacing10,
+                  TextField2(
+                    hintText: 'Street',
                     hintStyle: fontFamilyRegular.black45,
                   ),
                   verticalSpacing10,
@@ -78,21 +85,8 @@ class EnterVehicleDetailsView extends StackedView<EnterVehicleDetailsViewModel> 
                   ),
                   verticalSpacing10,
                   TextField2(
-                    hintText: 'State Name',
+                    hintText: 'Pincode',
                     hintStyle: fontFamilyRegular.black45,
-                    readOnly: true,
-                    onTap: () {
-                      viewModel.stateview();
-                    },
-                  ),
-                  verticalSpacing10,
-                  TextField2(
-                    hintText: 'City Name',
-                    hintStyle: fontFamilyRegular.black45,
-                    readOnly: true,
-                    onTap: () {
-                      viewModel.cityview();
-                    },
                   ),
                   verticalSpacing20,
                   verticalSpacing40,
@@ -114,10 +108,14 @@ class EnterVehicleDetailsView extends StackedView<EnterVehicleDetailsViewModel> 
                                   borderRadius: BorderRadius.circular(8),
                                   gradient: const LinearGradient(
                                     end: Alignment.center,
-                                    colors: [Colors.amberAccent, Colors.transparent],
+                                    colors: [
+                                      Colors.amberAccent,
+                                      Colors.transparent
+                                    ],
                                   ),
                                 ),
-                                child: Text('Submit', style: fontFamilyBold.size30.black),
+                                child: Text('Submit',
+                                    style: fontFamilyBold.size30.black),
                               ),
                             ),
                           ],

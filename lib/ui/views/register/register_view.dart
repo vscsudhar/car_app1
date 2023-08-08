@@ -103,8 +103,7 @@ class RegisterView extends StackedView<RegisterViewModel> {
                         InkWell(
                           onTap: () => viewModel.goToVehicleInputDetails(),
                           child: Padding(
-                            padding: rightPadding40 +
-                                rightPadding40,
+                            padding: rightPadding40 + rightPadding40,
                             child:
                                 Text('Register', style: fontFamilyBold.size32),
                           ),

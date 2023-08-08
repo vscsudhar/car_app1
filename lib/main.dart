@@ -1,15 +1,10 @@
+import 'package:car_app1/init_app.dart';
 import 'package:flutter/material.dart';
-import 'package:car_app1/app/app.bottomsheets.dart';
-import 'package:car_app1/app/app.dialogs.dart';
-import 'package:car_app1/app/app.locator.dart';
 import 'package:car_app1/app/app.router.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await setupLocator();
-  setupDialogUi();
-  setupBottomSheetUi();
+  await init();
   runApp(const MainApp());
 }
 

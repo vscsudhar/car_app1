@@ -10,6 +10,7 @@ import 'package:car_app1/ui/views/allocated_view/allocated_view_view.dart';
 
 import '../ui/views/seconduser/second_user_view.dart';
 import '../ui/views/enter_vehicle_details/enter_vehicle_details_view.dart';
+import 'package:car_app1/services/api_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -27,7 +28,8 @@ import '../ui/views/enter_vehicle_details/enter_vehicle_details_view.dart';
     LazySingleton(classType: BottomSheetService),
     LazySingleton(classType: DialogService),
     LazySingleton(classType: NavigationService),
-    // @stacked-service
+    // LazySingleton(classType: ApiService),
+// @stacked-service
   ],
   bottomsheets: [
     StackedBottomsheet(classType: NoticeSheet),
