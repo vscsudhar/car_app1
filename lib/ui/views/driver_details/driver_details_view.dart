@@ -1,33 +1,31 @@
 import 'package:car_app1/ui/common/app_strings.dart';
 import 'package:car_app1/ui/common/shared/styles.dart';
-import 'package:car_app1/ui/views/allocated_view/widget/allot_view.dart';
-import 'package:car_app1/ui/views/allocated_view/widget/complete_view.dart';
-import 'package:car_app1/ui/views/allocated_view/widget/inprogress_view.dart';
-import 'package:car_app1/ui/views/allocated_view/widget/pending_view.dart';
+import 'package:car_app1/ui/common/widgets/appbar_background.dart';
+import 'package:car_app1/ui/views/driver_details/widgets/available_driver_view.dart';
+import 'package:car_app1/ui/views/driver_details/widgets/onduty_driver_view.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-import '../../common/widgets/appbar_background.dart';
-import 'allocated_view_viewmodel.dart';
+import 'driver_details_viewmodel.dart';
 
-class AllocatedView extends StackedView<AllocatedViewModel> {
-  const AllocatedView({Key? key}) : super(key: key);
+class DriverDetailsView extends StackedView<DriverDetailsViewModel> {
+  const DriverDetailsView({Key? key}) : super(key: key);
 
   @override
   Widget builder(
     BuildContext context,
-    AllocatedViewModel viewModel,
+    DriverDetailsViewModel viewModel,
     Widget? child,
   ) {
     return DefaultTabController(
-      length: 4,
+      length: 2,
       child: Scaffold(
           backgroundColor: appwhite1,
           appBar: AppBar(
               backgroundColor: appwhite1,
               elevation: 0,
               title: Text(
-                'Allocation',
+                driverdetails,
                 style: fontFamilyMedium.appwhite.size30,
               ),
               flexibleSpace: buildAppBarBackground(),
@@ -35,9 +33,8 @@ class AllocatedView extends StackedView<AllocatedViewModel> {
               bottom: TabBar(
                 padding: defaultPadding8,
                 indicatorColor: Colors.amberAccent,
-                indicatorWeight: 2,
-                labelPadding: zeroPadding,
-                labelStyle: fontFamilyBold.appwhite.size14,
+                indicatorWeight: 4,
+                labelStyle: fontFamilyBold.appwhite.size16,
                 labelColor: Colors.black,
                 unselectedLabelColor: Colors.white,
                 indicator: BoxDecoration(
@@ -46,25 +43,21 @@ class AllocatedView extends StackedView<AllocatedViewModel> {
                   color: appwhite1,
                 ),
                 tabs: const [
-                  Tab(text: pending),
-                  Tab(text: allot),
-                  Tab(text: inprogress),
-                  Tab(text: completed),
+                  Tab(text: ondutydriver),
+                  Tab(text: availabledriver),
                 ],
               )),
           // ignore: prefer_const_constructors
           body: TabBarView(children: const [
-            PendingView(),
-            AllotView(),
-            InprogressView(),
-            CompleteView(),
+            OndutyDriver(),
+            AvailableDriver(),
           ])),
     );
   }
 
   @override
-  AllocatedViewModel viewModelBuilder(
+  DriverDetailsViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-      AllocatedViewModel();
+      DriverDetailsViewModel();
 }

@@ -3,7 +3,7 @@ import 'package:mockito/mockito.dart';
 import 'package:car_app1/app/app.bottomsheets.dart';
 import 'package:car_app1/app/app.locator.dart';
 import 'package:car_app1/ui/common/app_strings.dart';
-import 'package:car_app1/ui/views/home/home_viewmodel.dart';
+import 'package:car_app1/ui/views/login/home_viewmodel.dart';
 
 import '../helpers/test_helpers.dart';
 

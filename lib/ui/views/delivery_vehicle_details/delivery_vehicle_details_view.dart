@@ -1,3 +1,4 @@
+import 'package:car_app1/ui/common/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -5,7 +6,8 @@ import '../../common/shared/styles.dart';
 import '../../common/widgets/text_field2.dart';
 import 'delivery_vehicle_details_viewmodel.dart';
 
-class DeliveryVehicleDetailsView extends StackedView<DeliveryVehicleDetailsViewModel> {
+class DeliveryVehicleDetailsView
+    extends StackedView<DeliveryVehicleDetailsViewModel> {
   const DeliveryVehicleDetailsView({Key? key}) : super(key: key);
 
   @override
@@ -31,8 +33,9 @@ class DeliveryVehicleDetailsView extends StackedView<DeliveryVehicleDetailsViewM
                 ),
                 Center(
                   child: Text(
-                    'Delivery Vehicle',
-                    style: fontFamilyBold.size32.appwhite, // Adjust text color as needed
+                    deliveryvehicledetail,
+                    style: fontFamilyBold
+                        .size32.appwhite, // Adjust text color as needed
                   ),
                 ),
               ],
@@ -56,46 +59,46 @@ class DeliveryVehicleDetailsView extends StackedView<DeliveryVehicleDetailsViewM
                   verticalSpacing20,
                   verticalSpacing20,
                   TextField2(
-                    hintText: 'Invoice No',
+                    hintText: invoiceno,
                     hintStyle: fontFamilyMedium.black45,
                   ),
                   TextField2(
-                    hintText: 'Vehicle No',
+                    hintText: vehicleno,
                     hintStyle: fontFamilyMedium.black45,
                   ),
                   verticalSpacing10,
                   TextField2(
-                    hintText: 'Vehicle Model',
+                    hintText: vehiclemodel,
                     hintStyle: fontFamilyRegular.black45,
                   ),
                   verticalSpacing10,
                   TextField2(
-                    hintText: 'Contact Person Name',
+                    hintText: contactperson,
                     hintStyle: fontFamilyRegular.black45,
                   ),
                   verticalSpacing10,
                   TextField2(
-                    hintText: 'Contact Phone No',
+                    hintText: contactphone,
                     hintStyle: fontFamilyRegular.black45,
                   ),
                   verticalSpacing10,
                   TextField2(
-                    hintText: 'Area & Location',
+                    hintText: areaLoc,
                     hintStyle: fontFamilyRegular.black45,
                   ),
                   verticalSpacing10,
                   TextField2(
-                    hintText: 'Street',
+                    hintText: str,
                     hintStyle: fontFamilyRegular.black45,
                   ),
                   verticalSpacing10,
                   TextField2(
-                    hintText: 'Landmark',
+                    hintText: lndmrk,
                     hintStyle: fontFamilyRegular.black45,
                   ),
                   verticalSpacing10,
                   TextField2(
-                    hintText: 'Pincode',
+                    hintText: pincode,
                     hintStyle: fontFamilyRegular.black45,
                   ),
                   verticalSpacing20,
@@ -107,25 +110,13 @@ class DeliveryVehicleDetailsView extends StackedView<DeliveryVehicleDetailsViewM
                         child: Stack(
                           children: [
                             Padding(
-                              padding: leftPadding20,
+                              padding: leftPadding10,
                               child: Image.asset(backbutton, height: 140),
                             ),
                             Padding(
                               padding: topPadding30 + topPadding4,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  gradient: const LinearGradient(
-                                    end: Alignment.center,
-                                    colors: [
-                                      Colors.amberAccent,
-                                      Colors.transparent
-                                    ],
-                                  ),
-                                ),
-                                child: Text('Submit',
-                                    style: fontFamilyBold.size30.black),
-                              ),
+                              child: Text(submit,
+                                  style: fontFamilyBold.size30.black),
                             ),
                           ],
                         ),

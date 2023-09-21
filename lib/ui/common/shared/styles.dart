@@ -64,7 +64,7 @@ const leftPadding8 = EdgeInsets.only(left: 8);
 
 //Divider
 const verticalDivider = VerticalDivider(width: 1.5, color: Colors.black87);
-const horizontalDivider = Divider(height: 1.6, color: Colors.black87);
+const horizontalDivider = Divider(height: 1.5, color: Colors.black87);
 
 //fontFamily
 
@@ -93,10 +93,14 @@ extension TextStyleHelpers on TextStyle {
 
   TextStyle get color2699FB => copyWith(color: appcolor2699FB);
   TextStyle get appwhite => copyWith(color: appwhite1);
+  TextStyle get appViking1 => copyWith(color: appViking);
+  TextStyle get appBrinkPink1 => copyWith(color: appBrinkPink);
+  TextStyle get appChambray1 => copyWith(color: appChambray);
   TextStyle get white70 => copyWith(color: Colors.white70);
   TextStyle get white54 => copyWith(color: Colors.white54);
   TextStyle get red => copyWith(color: Colors.red);
   TextStyle get black => copyWith(color: Colors.black);
   TextStyle get black45 => copyWith(color: Colors.black45);
-  TextStyle get ceon => copyWith(color: const Color.fromARGB(255, 18, 136, 126));
+  TextStyle get ceon =>
+      copyWith(color: const Color.fromARGB(255, 18, 136, 126));
 }

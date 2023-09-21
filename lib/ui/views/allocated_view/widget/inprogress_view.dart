@@ -1,23 +1,34 @@
+import 'package:car_app1/ui/common/app_strings.dart';
+import 'package:car_app1/ui/views/allocated_view/allocated_view_viewmodel.dart';
+import 'package:car_app1/ui/views/allocated_view/list_view/list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:stacked/stacked.dart';
 
-class InprogressView extends StatefulWidget {
-  const InprogressView({super.key});
+class InprogressView extends StackedView<AllocatedViewModel> {
+  const InprogressView({Key? key}) : super(key: key);
 
   @override
-  State<InprogressView> createState() => _InprogressViewState();
-}
-
-class _InprogressViewState extends State<InprogressView> {
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: SizedBox(
-          height: 100,
-          width: 100,
-          child: Text('Inprogress'),
+  Widget builder(
+    BuildContext context,
+    AllocatedViewModel viewModel,
+    Widget? child,
+  ) {
+    return Scaffold(
+      body: Container(
+        child: Center(
+          child: ListView.separated(
+            itemBuilder: (context, index) => const AllotListView(),
+            separatorBuilder: (context, index) => const Text(''),
+            itemCount: 6,
+          ),
         ),
       ),
     );
   }
+
+  @override
+  AllocatedViewModel viewModelBuilder(
+    BuildContext context,
+  ) =>
+      AllocatedViewModel();
 }

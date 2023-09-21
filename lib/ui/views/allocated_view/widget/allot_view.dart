@@ -1,11 +1,10 @@
-import 'package:car_app1/ui/common/app_strings.dart';
 import 'package:car_app1/ui/views/allocated_view/allocated_view_viewmodel.dart';
 import 'package:car_app1/ui/views/allocated_view/list_view/list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-class PendingView extends StackedView<AllocatedViewModel> {
-  const PendingView({Key? key}) : super(key: key);
+class AllotView extends StackedView<AllocatedViewModel> {
+  const AllotView({super.key});
 
   @override
   Widget builder(
@@ -13,22 +12,20 @@ class PendingView extends StackedView<AllocatedViewModel> {
     AllocatedViewModel viewModel,
     Widget? child,
   ) {
+    final GlobalKey<AnimatedListState> listKey = GlobalKey<AnimatedListState>();
+
     return Scaffold(
       body: Container(
         child: Center(
-          child: ListView.separated(
-            itemBuilder: (context, index) => const AllotListView(),
-            separatorBuilder: (context, index) => const Text(''),
-            itemCount: 6,
-          ),
-        ),
+            child: ListView.separated(
+                itemBuilder: (context, index) => AllotListView(),
+                separatorBuilder: (context, index) => const Text(''),
+                itemCount: 6)),
       ),
     );
   }
 
   @override
-  AllocatedViewModel viewModelBuilder(
-    BuildContext context,
-  ) =>
+  AllocatedViewModel viewModelBuilder(BuildContext context) =>
       AllocatedViewModel();
 }

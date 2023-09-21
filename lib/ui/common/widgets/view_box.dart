@@ -51,11 +51,12 @@ class ViewBox extends StatelessWidget {
             children: [
               Padding(
                 padding: padding ?? const EdgeInsets.only(top: 34, right: 3),
-                child: icon ?? Icon(
-                  Icons.arrow_circle_right_rounded,
-                  size: 50,
-                  color:iconColor ?? Colors.black,
-                ),
+                child: icon ??
+                    Icon(
+                      Icons.arrow_circle_right_rounded,
+                      size: 50,
+                      color: iconColor ?? Colors.black,
+                    ),
               ),
             ],
           )

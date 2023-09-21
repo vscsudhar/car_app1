@@ -1,3 +1,4 @@
+import 'package:car_app1/ui/common/app_strings.dart';
 import 'package:car_app1/ui/common/shared/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
@@ -15,93 +16,108 @@ class SecondUserView extends StackedView<SecondUserViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-      body: Stack(
-        children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10)),
-            child: SizedBox(
-              height: 100,
-              width: double.infinity,
-              child: Stack(
-                children: [
-                  Positioned.fill(
-                    child: Image.asset(
-                      back1,
-                      fit: BoxFit.fill,
+      body: SafeArea(
+        child: Stack(
+          children: [
+            ClipRRect(
+              borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10)),
+              child: SizedBox(
+                height: 100,
+                width: double.infinity,
+                child: Stack(
+                  children: [
+                    Positioned.fill(
+                      child: Image.asset(
+                        back1,
+                        fit: BoxFit.fill,
+                      ),
                     ),
-                  ),
-                  Center(
-                    child: Text(
-                      'View',
-                      style: fontFamilyBold.size32.appwhite,
+                    Center(
+                      child: Text(
+                        'ABC Car care',
+                        style: fontFamilyBold.size26.appwhite,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-          SingleChildScrollView(
-            child: Padding(
-              padding: topPadding40 + topPadding40 + topPadding10,
-              child: Column(
-                children: [
-                  Box(
-                    onTap: () => viewModel.goToAllocatedView(),
-                    margin: defaultPadding8 + topPadding12,
-                    boxColor: appViking,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Allocate',
-                          style: fontFamilyMedium.size20,
-                        ),
-                        const Icon(
-                          Icons.arrow_circle_right_outlined,
-                          size: 40,
-                          color: appChambray,
-                        )
-                      ],
+            SingleChildScrollView(
+              child: Padding(
+                padding: topPadding40 + topPadding40 + topPadding10,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding:topPadding30+leftPadding10,
+                      child: Text(
+                        'View',
+                        style: fontFamilyBold.appChambray1.size22,
+                      ),
                     ),
-                  ),
-                  Box(
-                    margin: defaultPadding8,
-                    boxColor: appViking,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'OnDuty Driver',
-                          style: fontFamilyMedium.size20,
-                        ),
-                        const Icon(
-                          Icons.arrow_circle_right_outlined,
-                          size: 40,
-                          color: appChambray,
-                        )
-                      ],
+                    Box(
+                      onTap: () => viewModel.goToAllocatedView(),
+                      margin: defaultPadding8 + topPadding12 + topPadding4,
+                      boxColor: appViking,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            allocate,
+                            style: fontFamilyMedium.size20,
+                          ),
+                          const Icon(
+                            Icons.arrow_circle_right_outlined,
+                            size: 40,
+                            color: appChambray,
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                  Box(
-                    margin: defaultPadding8,
-                    boxColor: appViking,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Available Driver', style: fontFamilyMedium.size20),
-                        const Icon(
-                          Icons.arrow_circle_right_outlined,
-                          size: 40,
-                          color: appChambray,
-                        )
-                      ],
+                    Box(
+                      onTap: () => viewModel.goToDriverDetails(),
+                      margin: defaultPadding8,
+                      boxColor: appViking,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            driverdetails,
+                            style: fontFamilyMedium.size20,
+                          ),
+                          const Icon(
+                            Icons.arrow_circle_right_outlined,
+                            size: 40,
+                            color: appChambray,
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                    Box(
+                      onTap: () => viewModel.goToDriverReport(),
+                      margin: defaultPadding8,
+                      boxColor: appViking,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            '$driver $report',
+                            style: fontFamilyMedium.size20,
+                          ),
+                          const Icon(
+                            Icons.arrow_circle_right_outlined,
+                            size: 40,
+                            color: appChambray,
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

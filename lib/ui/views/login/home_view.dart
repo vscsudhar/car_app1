@@ -1,3 +1,4 @@
+import 'package:car_app1/ui/common/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import '../../common/shared/styles.dart';
@@ -38,7 +39,7 @@ class HomeView extends StackedView<HomeViewModel> {
                             Padding(
                               padding: leftPadding20,
                               child: Text(
-                                'Hello \nAgain....!',
+                                '$hello \n$again....!',
                                 style: fontFamilyBold.size32.appwhite,
                               ),
                             ),
@@ -51,19 +52,25 @@ class HomeView extends StackedView<HomeViewModel> {
                         // child: Text('Logo',textAlign: TextAlign.center,),
                       ),
                       TextField2(
-                        hintText: 'user Id',
+                        hintText: userid,
+                        initialValue: 'eve.holt@reqres.in',
                         hintStyle: fontFamilyRegular,
                         validator: (val) => val == null || val.isEmpty
-                            ? 'userId is required'
+                            ? '$userid is $require'
                             : null,
+                        onSaved: (email) =>
+                            viewModel.loginRequest.email = email,
                       ),
                       verticalSpacing16,
                       TextField2(
-                        hintText: 'password',
+                        initialValue: 'cityslicka',
+                        hintText: pass,
                         hintStyle: fontFamilyRegular,
                         validator: (val) => val == null || val.isEmpty
-                            ? 'password is required'
+                            ? '$pass is $require'
                             : null,
+                        onSaved: (passsword) =>
+                            viewModel.loginRequest.password = passsword,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -71,7 +78,7 @@ class HomeView extends StackedView<HomeViewModel> {
                           TextButton(
                             onPressed: () {},
                             child: Text(
-                              'Forgot password?',
+                              '$forgot $pass?',
                               style: fontFamilyMedium.ceon,
                             ),
                           ),
@@ -87,9 +94,14 @@ class HomeView extends StackedView<HomeViewModel> {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                if (formKey.currentState?.validate() ?? false) {
+                                  formKey.currentState?.save();
+                                  viewModel.userlogin();
+                                }
+                              },
                               child: Text(
-                                'Login',
+                                login,
                                 style: fontFamilyBold.size34.black,
                               ),
                             )
@@ -109,13 +121,13 @@ class HomeView extends StackedView<HomeViewModel> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
-                            "Do you don't Have An Account?",
+                            donthaveacc,
                             style: fontFamilyMedium.size12.black45,
                           ),
                           TextButton(
                             onPressed: () => viewModel.goToRegister(),
                             child: Text(
-                              'Create New Account',
+                              createnewacc,
                               style: fontFamilyMedium.size14.black,
                             ),
                           ),

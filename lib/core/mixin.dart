@@ -16,4 +16,9 @@ mixin NavigationMixin {
       _navigationService.navigateTo(Routes.allocatedView);
   void goToSecondUser() => _navigationService.navigateTo(Routes.secondUserView);
   void goToSplash() => _navigationService.navigateTo(Routes.startupView);
+  void goToDataEntry() => _navigationService.navigateTo(Routes.dateEntryView);
+  void goToDriverDetails() =>
+      _navigationService.navigateTo(Routes.driverDetailsView);
+  void goToDriverReport() =>
+      _navigationService.navigateTo(Routes.driverReportView);
 }

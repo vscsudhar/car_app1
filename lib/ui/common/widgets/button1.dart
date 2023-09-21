@@ -9,6 +9,7 @@ class Button1 extends StatelessWidget {
   final void Function()? onTap;
   final bool outline;
   final Widget? leading;
+  final double? width;
 
   const Button1({
     Key? key,
@@ -17,6 +18,7 @@ class Button1 extends StatelessWidget {
     this.busy = false,
     this.onTap,
     this.leading,
+    this.width,
   })  : outline = false,
         super(key: key);
 
@@ -26,12 +28,12 @@ class Button1 extends StatelessWidget {
       onTap: !disabled ? onTap : () {},
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 350),
-        width: double.infinity,
+        width: width ?? double.infinity,
         height: 48,
         alignment: Alignment.center,
         decoration: !outline
             ? BoxDecoration(
-                color: !disabled ? appcolor2699FB : Colors.grey,
+                color: !disabled ? appViking : Colors.grey,
                 borderRadius: BorderRadius.circular(8),
               )
             : BoxDecoration(

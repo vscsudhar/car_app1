@@ -1,10 +1,10 @@
+import 'package:car_app1/ui/common/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../common/shared/styles.dart';
 import '../../common/widgets/text_field2.dart';
-import '../enter_vehicle_details/enter_vehicle_details_view.dart';
-import '../home/home_view.dart';
+import '../login/home_view.dart';
 import 'register_viewmodel.dart';
 
 class RegisterView extends StackedView<RegisterViewModel> {
@@ -39,7 +39,7 @@ class RegisterView extends StackedView<RegisterViewModel> {
                     Row(
                       children: [
                         Text(
-                          'Create \nAccount.....!',
+                          '$create \n$acc.....!',
                           style: fontFamilyBold.size34.appwhite,
                         ),
                       ],
@@ -51,41 +51,41 @@ class RegisterView extends StackedView<RegisterViewModel> {
                     verticalSpacing10,
                     // verticalSpacing20,
                     const TextField2(
-                      hintText: 'Name',
+                      hintText: name,
                       hintStyle: fontFamilyMedium,
                     ),
                     verticalSpacing10,
                     const TextField2(
-                      hintText: 'Email',
+                      hintText: email,
                       hintStyle: fontFamilyRegular,
                     ),
                     verticalSpacing10,
                     const TextField2(
-                      hintText: 'Phone No',
+                      hintText: phone,
                       hintStyle: fontFamilyRegular,
                     ),
                     verticalSpacing10,
                     TextField2(
-                      hintText: 'State Name',
+                      hintText: '$state $name',
                       hintStyle: fontFamilyRegular,
                       readOnly: true,
                       onTap: () => viewModel.stateview(),
                     ),
                     verticalSpacing10,
                     TextField2(
-                      hintText: 'City Name',
+                      hintText: '$city $name',
                       hintStyle: fontFamilyRegular,
                       readOnly: true,
                       onTap: () => viewModel.cityview(),
                     ),
                     verticalSpacing10,
                     const TextField2(
-                      hintText: 'Password',
+                      hintText: pass,
                       hintStyle: fontFamilyRegular,
                     ),
                     verticalSpacing10,
                     const TextField2(
-                      hintText: 'Re-Enter Password',
+                      hintText: '$retype $pass',
                       hintStyle: fontFamilyRegular,
                     ),
                     verticalSpacing20,
@@ -101,11 +101,10 @@ class RegisterView extends StackedView<RegisterViewModel> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         InkWell(
-                          onTap: () => viewModel.goToVehicleInputDetails(),
+                          onTap: () => viewModel.goToDataEntry(),
                           child: Padding(
                             padding: rightPadding40 + rightPadding40,
-                            child:
-                                Text('Register', style: fontFamilyBold.size32),
+                            child: Text(register, style: fontFamilyBold.size32),
                           ),
                         ),
                       ],
@@ -117,7 +116,7 @@ class RegisterView extends StackedView<RegisterViewModel> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           const Text(
-                            'Already Have an Account?',
+                            alreadyhaveacc,
                             style: fontFamilyRegular,
                           ),
                           TextButton(
@@ -129,7 +128,7 @@ class RegisterView extends StackedView<RegisterViewModel> {
                                             const HomeView()));
                               },
                               child: const Text(
-                                'Login',
+                                login,
                                 style: fontFamilyMedium,
                               ))
                         ],
