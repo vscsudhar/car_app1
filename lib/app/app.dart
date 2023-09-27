@@ -13,6 +13,8 @@ import '../ui/views/enter_vehicle_details/enter_vehicle_details_view.dart';
 import 'package:car_app1/ui/views/date_entry/date_entry_view.dart';
 import 'package:car_app1/ui/views/driver_details/driver_details_view.dart';
 import 'package:car_app1/ui/views/driver_report/driver_report_view.dart';
+import 'package:car_app1/ui/views/profile/profile_view.dart';
+import 'package:car_app1/ui/views/driver/driver_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -27,6 +29,8 @@ import 'package:car_app1/ui/views/driver_report/driver_report_view.dart';
     MaterialRoute(page: DateEntryView),
     MaterialRoute(page: DriverDetailsView),
     MaterialRoute(page: DriverReportView),
+    MaterialRoute(page: ProfileView),
+    MaterialRoute(page: DriverView),
 // @stacked-route
   ],
   dependencies: [

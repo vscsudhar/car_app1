@@ -1,7 +1,10 @@
 import 'package:car_app1/ui/common/app_strings.dart';
 import 'package:car_app1/ui/common/shared/styles.dart';
 import 'package:car_app1/ui/common/ui_helpers.dart';
+import 'package:car_app1/ui/common/widgets/appbar_background.dart';
 import 'package:car_app1/ui/common/widgets/box.dart';
+import 'package:car_app1/ui/views/date_entry/drawer/data_drawer.dart';
+import 'package:car_app1/ui/views/date_entry/widgets/entry_view_list.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -17,8 +20,19 @@ class DateEntryView extends StackedView<DateEntryViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: SafeArea(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text(
+          'ABC Car Care',
+          style: fontFamilyBold.size26,
+        ),
+        centerTitle: true,
+        backgroundColor: appwhite1,
+        elevation: 0,
+        flexibleSpace: buildAppBarBackground(),
+      ),
+      body: SingleChildScrollView(
+        child: SafeArea(
           child: Column(
             children: [
               verticalSpaceMedium,
@@ -78,9 +92,37 @@ class DateEntryView extends StackedView<DateEntryViewModel> {
                   ),
                 ),
               ),
+              Padding(
+                padding: zeroPadding,
+                child: Box(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const EntryViewList())),
+                  margin: defaultPadding8,
+                  boxColor: appViking,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'view Details',
+                        style: fontFamilyMedium.size20,
+                      ),
+                      const Icon(
+                        Icons.arrow_circle_right_outlined,
+                        size: 40,
+                        color: appChambray,
+                      )
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
-        ));
+        ),
+      ),
+      drawer: const DrawerView(),
+    );
   }
 
   @override

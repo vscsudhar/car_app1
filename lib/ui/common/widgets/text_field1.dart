@@ -11,6 +11,7 @@ class TextField1 extends StatelessWidget {
     this.onSaved,
     this.onChanged,
     this.validator,
+    this.color,
     super.key,
   });
 
@@ -21,13 +22,14 @@ class TextField1 extends StatelessWidget {
   final void Function(String?)? onChanged;
   final String? Function(String?)? validator;
   final bool? obscureText;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: TextInputType.text, //username or email
       initialValue: initialValue ?? '',
-      style: fontFamilyBold.size16.appwhite,
+      style: fontFamilyBold.size16.copyWith(color: color ?? appwhite1),
       decoration: InputDecoration(
         focusColor: Colors.white,
         hintText: hintText ?? '',

@@ -34,7 +34,9 @@ class DriverReportView extends StackedView<DriverReportViewModel> {
                     InkWell(
                       onTap: () => viewModel.selectDate(context),
                       child: Container(
-                        margin: const EdgeInsets.only(top: 12) + leftPadding10 + rightPadding10,
+                        margin: const EdgeInsets.only(top: 12) +
+                            leftPadding10 +
+                            rightPadding10,
                         padding: defaultPadding12,
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -69,7 +71,9 @@ class DriverReportView extends StackedView<DriverReportViewModel> {
                     InkWell(
                       onTap: () => viewModel.selectDate(context),
                       child: Container(
-                        margin: const EdgeInsets.only(top: 12) + leftPadding10 + rightPadding10,
+                        margin: const EdgeInsets.only(top: 12) +
+                            leftPadding10 +
+                            rightPadding10,
                         padding: defaultPadding12,
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -104,7 +108,9 @@ class DriverReportView extends StackedView<DriverReportViewModel> {
               ),
             ),
             ClipRRect(
-              borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10)),
+              borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(10),
+                  bottomRight: Radius.circular(10)),
               child: SizedBox(
                 height: 100,
                 width: double.infinity,

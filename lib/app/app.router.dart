@@ -10,6 +10,7 @@ import 'package:car_app1/ui/views/allocated_view/allocated_view_view.dart'
 import 'package:car_app1/ui/views/date_entry/date_entry_view.dart' as _i9;
 import 'package:car_app1/ui/views/delivery_vehicle_details/delivery_vehicle_details_view.dart'
     as _i4;
+import 'package:car_app1/ui/views/driver/driver_view.dart' as _i13;
 import 'package:car_app1/ui/views/driver_details/driver_details_view.dart'
     as _i10;
 import 'package:car_app1/ui/views/driver_report/driver_report_view.dart'
@@ -17,13 +18,14 @@ import 'package:car_app1/ui/views/driver_report/driver_report_view.dart'
 import 'package:car_app1/ui/views/enter_vehicle_details/enter_vehicle_details_view.dart'
     as _i7;
 import 'package:car_app1/ui/views/login/home_view.dart' as _i2;
+import 'package:car_app1/ui/views/profile/profile_view.dart' as _i12;
 import 'package:car_app1/ui/views/register/register_view.dart' as _i6;
 import 'package:car_app1/ui/views/seconduser/second_user_view.dart' as _i8;
 import 'package:car_app1/ui/views/startup/startup_view.dart' as _i3;
-import 'package:flutter/material.dart' as _i12;
+import 'package:flutter/material.dart' as _i14;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i13;
+import 'package:stacked_services/stacked_services.dart' as _i15;
 
 class Routes {
   static const homeView = '/home-view';
@@ -46,6 +48,10 @@ class Routes {
 
   static const driverReportView = '/driver-report-view';
 
+  static const profileView = '/profile-view';
+
+  static const driverView = '/driver-view';
+
   static const all = <String>{
     homeView,
     startupView,
@@ -57,6 +63,8 @@ class Routes {
     dateEntryView,
     driverDetailsView,
     driverReportView,
+    profileView,
+    driverView,
   };
 }
 
@@ -102,66 +110,86 @@ class StackedRouter extends _i1.RouterBase {
       Routes.driverReportView,
       page: _i11.DriverReportView,
     ),
+    _i1.RouteDef(
+      Routes.profileView,
+      page: _i12.ProfileView,
+    ),
+    _i1.RouteDef(
+      Routes.driverView,
+      page: _i13.DriverView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
       );
     },
     _i3.StartupView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.StartupView(),
         settings: data,
       );
     },
     _i4.DeliveryVehicleDetailsView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.DeliveryVehicleDetailsView(),
         settings: data,
       );
     },
     _i5.AllocatedView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.AllocatedView(),
         settings: data,
       );
     },
     _i6.RegisterView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.RegisterView(),
         settings: data,
       );
     },
     _i7.EnterVehicleDetailsView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.EnterVehicleDetailsView(),
         settings: data,
       );
     },
     _i8.SecondUserView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.SecondUserView(),
         settings: data,
       );
     },
     _i9.DateEntryView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i9.DateEntryView(),
         settings: data,
       );
     },
     _i10.DriverDetailsView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.DriverDetailsView(),
         settings: data,
       );
     },
     _i11.DriverReportView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i11.DriverReportView(),
+        settings: data,
+      );
+    },
+    _i12.ProfileView: (data) {
+      return _i14.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i12.ProfileView(),
+        settings: data,
+      );
+    },
+    _i13.DriverView: (data) {
+      return _i14.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i13.DriverView(),
         settings: data,
       );
     },
@@ -173,7 +201,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i13.NavigationService {
+extension NavigatorStateExtension on _i15.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -314,6 +342,34 @@ extension NavigatorStateExtension on _i13.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToProfileView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.profileView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToDriverView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.driverView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -448,6 +504,34 @@ extension NavigatorStateExtension on _i13.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.driverReportView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithProfileView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.profileView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithDriverView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.driverView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

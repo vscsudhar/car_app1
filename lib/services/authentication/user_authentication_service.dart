@@ -31,9 +31,16 @@ class UserAuthenticationService with NavigationMixin {
     });
     _sharedPreference.setString('email', loginRequest.email ?? '');
     _sharedPreference.setString('password', loginRequest.password ?? '');
+    // _sharedPreference.setString('usertype', loginRequest.usertype ?? '');
+    // && _loginResponse?.usertype == 'dataEntry'
     if (_loginResponse?.token != null) {
-      goToSecondUser();
-    } else {
+      goToDataEntry();
+    }
+    // && _loginResponse?.usertype == 'Allocator'
+    // else if(_loginResponse?.token != null ) {
+    //   goToSecondUser();
+    // }
+    else {
       Fluttertoast.showToast(msg: 'login Failed', fontSize: 10);
       _dialogService.showCustomDialog(
           variant: DialogType.infoAlert, description: 'login failed');

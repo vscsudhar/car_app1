@@ -1,5 +1,6 @@
 import 'package:car_app1/ui/common/app_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../common/shared/styles.dart';
@@ -33,7 +34,7 @@ class DeliveryVehicleDetailsView
                 ),
                 Center(
                   child: Text(
-                    deliveryvehicledetail,
+                    'ABC Car Care',
                     style: fontFamilyBold
                         .size32.appwhite, // Adjust text color as needed
                   ),
@@ -57,7 +58,47 @@ class DeliveryVehicleDetailsView
                   verticalSpacing60,
                   verticalSpacing20,
                   verticalSpacing20,
-                  verticalSpacing20,
+                  Center(
+                    child: Text(
+                      deliveryvehicledetail,
+                      style: fontFamilyBold
+                          .size32.appChambray1, // Adjust text color as needed
+                    ),
+                  ),
+                  verticalSpacing10,
+                  Text(
+                    'Enter Date',
+                    style: fontFamilyRegular.size16
+                        .copyWith(color: Colors.black45),
+                  ),
+                  InkWell(
+                    onTap: () => viewModel.selectDate(context),
+                    child: Container(
+                      margin: const EdgeInsets.only(top: 12),
+                      padding: defaultPadding12,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(
+                          5,
+                        ),
+                        boxShadow: const <BoxShadow>[
+                          BoxShadow(
+                            color: Color.fromRGBO(0, 0, 0, 0.4),
+                            offset: Offset(3, 3),
+                            blurRadius: 5,
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(DateFormat.yMMMEd().format(viewModel.sdate)),
+                          const Icon(Icons.calendar_today),
+                        ],
+                      ),
+                    ),
+                  ),
+                  verticalSpacing8,
                   TextField2(
                     hintText: invoiceno,
                     hintStyle: fontFamilyMedium.black45,
@@ -106,7 +147,7 @@ class DeliveryVehicleDetailsView
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       InkWell(
-                        onTap: () => viewModel.goToSecondUser(),
+                        onTap: () => viewModel.goToDataEntry(),
                         child: Stack(
                           children: [
                             Padding(

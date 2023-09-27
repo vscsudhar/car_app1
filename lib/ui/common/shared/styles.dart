@@ -40,6 +40,7 @@ const defaultPadding14 = EdgeInsets.all(14);
 const defaultPadding10 = EdgeInsets.all(10);
 const defaultPadding12 = EdgeInsets.all(12);
 const defaultPadding8 = EdgeInsets.all(8);
+const defaultPadding4 = EdgeInsets.all(4);
 const topPadding40 = EdgeInsets.only(top: 40);
 const topPadding30 = EdgeInsets.only(top: 30);
 const topPadding20 = EdgeInsets.only(top: 20);
@@ -64,6 +65,7 @@ const leftPadding8 = EdgeInsets.only(left: 8);
 
 //Divider
 const verticalDivider = VerticalDivider(width: 1.5, color: Colors.black87);
+const verticalDivider1 = VerticalDivider(width: 3, color: Colors.black87);
 const horizontalDivider = Divider(height: 1.5, color: Colors.black87);
 
 //fontFamily

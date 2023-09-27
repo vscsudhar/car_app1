@@ -1,4 +1,4 @@
-import 'package:car_app1/init_app.dart';
+import 'init_app.dart';
 import 'package:flutter/material.dart';
 import 'package:car_app1/app/app.router.dart';
 import 'package:stacked_services/stacked_services.dart';

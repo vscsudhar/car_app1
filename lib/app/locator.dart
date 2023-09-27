@@ -7,11 +7,9 @@ import 'package:stacked_services/stacked_services.dart';
 final locator = GetIt.instance;
 
 Future<void> setUpLocator() async {
-     var sharedPreference = await SharedPreferences.getInstance();
-   locator.registerLazySingleton(() => sharedPreference);
+  var sharedPreference = await SharedPreferences.getInstance();
+  locator.registerLazySingleton(() => sharedPreference);
   locator.registerLazySingleton(() => UserAuthenticationService());
   locator.registerLazySingleton<ApiService>(() => ApiService.init());
-    locator.registerLazySingleton(() => DialogService());
-
-
+  locator.registerLazySingleton(() => DialogService());
 }

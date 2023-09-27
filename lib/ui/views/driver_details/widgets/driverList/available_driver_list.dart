@@ -45,7 +45,7 @@ class AvailableDriverList extends ViewModelWidget<DriverDetailsViewModel> {
                       padding: defaultPadding8,
                       child: Text(
                         'Last Completed Time: ',
-                        style: fontFamilyRegular.size18.appChambray1,
+                        style: fontFamilyRegular.size16.appChambray1,
                       ),
                     ),
                     const Spacer(),

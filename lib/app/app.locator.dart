@@ -28,8 +28,8 @@ Future<void> setupLocator({
   locator.registerLazySingleton(() => BottomSheetService());
   locator.registerLazySingleton(() => DialogService());
   locator.registerLazySingleton(() => NavigationService());
-      var sharedPreference = await SharedPreferences.getInstance();
-   locator.registerLazySingleton(() => sharedPreference);
+    var sharedPreference = await SharedPreferences.getInstance();
+  locator.registerLazySingleton(() => sharedPreference);
   locator.registerLazySingleton(() => UserAuthenticationService());
   locator.registerLazySingleton<ApiService>(() => ApiService.init());
 }

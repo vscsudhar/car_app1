@@ -1,5 +1,5 @@
 import 'package:car_app1/ui/views/allocated_view/allocated_view_viewmodel.dart';
-import 'package:car_app1/ui/views/allocated_view/list_view/list_view.dart';
+import 'package:car_app1/ui/views/allocated_view/list_view/allot_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -15,12 +15,19 @@ class AllotView extends StackedView<AllocatedViewModel> {
     final GlobalKey<AnimatedListState> listKey = GlobalKey<AnimatedListState>();
 
     return Scaffold(
-      body: Container(
-        child: Center(
-            child: ListView.separated(
-                itemBuilder: (context, index) => AllotListView(),
+      body: Stack(
+        children: [
+          Container(
+            child: Center(
+              child: ListView.separated(
+                itemBuilder: (context, index) => const AllotListView(),
                 separatorBuilder: (context, index) => const Text(''),
-                itemCount: 6)),
+                itemCount: 6,
+              ),
+            ),
+          ),
+          // Center(child: Text('ABC Car Care',style: fontFamilyBold.appViking1.size28,)),
+        ],
       ),
     );
   }

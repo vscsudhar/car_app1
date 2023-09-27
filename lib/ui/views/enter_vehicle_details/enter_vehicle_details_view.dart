@@ -1,5 +1,6 @@
 import 'package:car_app1/ui/common/app_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../common/shared/styles.dart';
@@ -30,13 +31,12 @@ class EnterVehicleDetailsView
                     child: Image.asset(
                       back1,
                       fit: BoxFit.fill,
-                    ), // Replace with the actual path of your image
+                    ),
                   ),
                   Center(
                     child: Text(
-                      vehicleinput,
-                      style: fontFamilyBold
-                          .size32.appwhite, // Adjust text color as needed
+                      'ABC Car Care',
+                      style: fontFamilyBold.size26.appwhite,
                     ),
                   ),
                 ],
@@ -49,7 +49,49 @@ class EnterVehicleDetailsView
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     verticalSpacing60,
-                    verticalSpacing40,
+                    verticalSpacing20,
+                    Center(
+                      child: Text(
+                        vehicleinput,
+                        style: fontFamilyBold.size32.appBrinkPink1,
+                      ),
+                    ),
+                    verticalSpacing10,
+                    Text(
+                      'Enter Date',
+                      style: fontFamilyRegular.size16
+                          .copyWith(color: Colors.black45),
+                    ),
+                    InkWell(
+                      onTap: () => viewModel.selectDate(context),
+                      child: Container(
+                        margin: const EdgeInsets.only(top: 12) +
+                            leftPadding10 +
+                            rightPadding10,
+                        padding: defaultPadding12,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(
+                            5,
+                          ),
+                          boxShadow: const <BoxShadow>[
+                            BoxShadow(
+                              color: Color.fromRGBO(0, 0, 0, 0.4),
+                              offset: Offset(3, 3),
+                              blurRadius: 5,
+                            ),
+                          ],
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(DateFormat.yMMMEd().format(viewModel.sdate)),
+                            const Icon(Icons.calendar_today),
+                          ],
+                        ),
+                      ),
+                    ),
+                    verticalSpacing8,
                     TextField2(
                       hintText: vehicleno,
                       hintStyle: fontFamilyMedium.black45,
@@ -95,7 +137,7 @@ class EnterVehicleDetailsView
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         InkWell(
-                          onTap: () => viewModel.goToDeliveryVehicleDetails(),
+                          onTap: () => viewModel.goToDataEntry(),
                           child: Stack(
                             children: [
                               Padding(

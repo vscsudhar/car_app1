@@ -1,6 +1,5 @@
-import 'package:car_app1/ui/common/app_strings.dart';
 import 'package:car_app1/ui/views/allocated_view/allocated_view_viewmodel.dart';
-import 'package:car_app1/ui/views/allocated_view/list_view/list_view.dart';
+import 'package:car_app1/ui/views/allocated_view/list_view/inprogress_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -17,7 +16,7 @@ class InprogressView extends StackedView<AllocatedViewModel> {
       body: Container(
         child: Center(
           child: ListView.separated(
-            itemBuilder: (context, index) => const AllotListView(),
+            itemBuilder: (context, index) => const InprogressListView(),
             separatorBuilder: (context, index) => const Text(''),
             itemCount: 6,
           ),

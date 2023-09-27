@@ -1,12 +1,14 @@
 import 'package:car_app1/ui/views/allocated_view/allocated_view_viewmodel.dart';
-import 'package:car_app1/ui/views/allocated_view/list_view/list_view.dart';
+import 'package:car_app1/ui/views/allocated_view/list_view/completed_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 class CompleteView extends StackedView<AllocatedViewModel> {
-  const CompleteView({
-    // required this.data, 
-    Key? key}) : super(key: key);
+  const CompleteView(
+      {
+      // required this.data,
+      Key? key})
+      : super(key: key);
 
   // final List<Datum> data;
 
@@ -20,7 +22,7 @@ class CompleteView extends StackedView<AllocatedViewModel> {
       body: Container(
         child: Center(
           child: ListView.separated(
-            itemBuilder: (context, index) => const AllotListView(),
+            itemBuilder: (context, index) => const CompletedListView(),
             separatorBuilder: (context, index) => const Text(''),
             itemCount: 6,
           ),

@@ -20,7 +20,9 @@ class SecondUserView extends StackedView<SecondUserViewModel> {
         child: Stack(
           children: [
             ClipRRect(
-              borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10)),
+              borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(10),
+                  bottomRight: Radius.circular(10)),
               child: SizedBox(
                 height: 100,
                 width: double.infinity,
@@ -49,7 +51,7 @@ class SecondUserView extends StackedView<SecondUserViewModel> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding:topPadding30+leftPadding10,
+                      padding: topPadding30 + leftPadding10,
                       child: Text(
                         'View',
                         style: fontFamilyBold.appChambray1.size22,

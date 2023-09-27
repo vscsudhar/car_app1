@@ -10,6 +10,7 @@ class Button1 extends StatelessWidget {
   final bool outline;
   final Widget? leading;
   final double? width;
+  final Color? color;
 
   const Button1({
     Key? key,
@@ -19,6 +20,7 @@ class Button1 extends StatelessWidget {
     this.onTap,
     this.leading,
     this.width,
+    this.color,
   })  : outline = false,
         super(key: key);
 
@@ -40,7 +42,7 @@ class Button1 extends StatelessWidget {
                 color: Colors.transparent,
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(
-                  color: appcolor2699FB,
+                  color: color ?? appcolor2699FB,
                   width: 1,
                 )),
         child: !busy
