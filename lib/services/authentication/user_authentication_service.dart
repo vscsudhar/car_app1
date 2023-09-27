@@ -23,10 +23,8 @@ class UserAuthenticationService with NavigationMixin {
   LoginResponse? get loginResponse => _loginResponse;
 
   Future<dynamic> login(LoginRequest loginRequest) async {
-    _loginResponse =
-        await locator<ApiService>().login(loginRequest).catchError((e) {
-      _dialogService.showCustomDialog(
-          variant: DialogType.error, description: e.toString());
+    _loginResponse = await locator<ApiService>().login(loginRequest).catchError((e) {
+      _dialogService.showCustomDialog(variant: DialogType.error, description: e.toString());
       return e;
     });
     _sharedPreference.setString('email', loginRequest.email ?? '');
@@ -34,7 +32,8 @@ class UserAuthenticationService with NavigationMixin {
     // _sharedPreference.setString('usertype', loginRequest.usertype ?? '');
     // && _loginResponse?.usertype == 'dataEntry'
     if (_loginResponse?.token != null) {
-      goToDataEntry();
+      // goToDataEntry();
+      goToDriverView();
     }
     // && _loginResponse?.usertype == 'Allocator'
     // else if(_loginResponse?.token != null ) {
@@ -42,8 +41,7 @@ class UserAuthenticationService with NavigationMixin {
     // }
     else {
       Fluttertoast.showToast(msg: 'login Failed', fontSize: 10);
-      _dialogService.showCustomDialog(
-          variant: DialogType.infoAlert, description: 'login failed');
+      _dialogService.showCustomDialog(variant: DialogType.infoAlert, description: 'login failed');
     }
   }
 }
